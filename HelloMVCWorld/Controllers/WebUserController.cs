@@ -20,5 +20,19 @@ namespace HelloMVCWorld.Controllers
             //TODO: Update in DB here...
             return Content($"User {webUser.FirstName} {webUser.LastName} updated!");
         }
+        [HttpGet]
+        public IActionResult SimpleValidation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SimpleValidation(Models.WebUser webUser)
+        {
+            if (ModelState.IsValid)
+                return Content("Thank you!");
+            else
+                return Content("Model could not be validated!");
+        }
     }
 }
