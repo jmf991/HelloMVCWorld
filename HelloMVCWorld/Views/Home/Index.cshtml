@@ -1,6 +1,7 @@
 ﻿@model HelloMVCWorld.Models.Movie
 @{
     Layout = null;
+    ViewData["Title"] = "Index";
 }
 
 <!DOCTYPE html>
@@ -13,6 +14,10 @@
 <body>
 
     The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
+    @for (int i = 0; i < 3; i++)
+    {
+        @await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData) { { "index", i } })
+    }
 
 </body>
 </html>
