@@ -32,7 +32,7 @@ namespace HelloMVCWorld.Controllers
             if (ModelState.IsValid)
                 return Content("Thank you!");
             else
-                return Content("Model could not be validated!");
+                return View(webUser);
         }
     }
 }
