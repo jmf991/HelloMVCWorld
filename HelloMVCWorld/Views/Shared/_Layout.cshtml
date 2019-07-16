@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+
+    @RenderBody()
+
+
+    @RenderSection("Footer", required: false)
+    @if (!IsSectionDefined("Footer"))
+    {
+        <p><span>Footer section not defined so.. . Generic footer message!</span></p>
+            }
+
+    </body>
+</html>

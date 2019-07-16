@@ -1,23 +1,17 @@
 ﻿@model HelloMVCWorld.Models.Movie
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Index";
 }
 
-<!DOCTYPE html>
+@*@section Footer {
+    <span>
+        Hello from the <b>Home</b> page!
+    </span>
+}*@
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@Model.Title</title>
-</head>
-<body>
-
-    The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
-    @for (int i = 0; i < 3; i++)
+<p>The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()</p>
+@for (int i = 0; i < 3; i++)
     {
-        @await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData) { { "index", i } })
+@await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData) { { "index", i } })
     }
-
-</body>
-</html>
