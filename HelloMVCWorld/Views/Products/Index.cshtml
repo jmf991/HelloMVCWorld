@@ -1,0 +1,15 @@
+﻿@model HelloMVCWorld.Models.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Prodcuts";
+}
+
+@section Footer {
+    <span>
+        Hello from the <b>Products</b> page!
+    </span>
+}
+
+<h2>Products</h2>
+
+<p>The Products <b>@Model.Name</b> has a price of : @Model.Price</p>

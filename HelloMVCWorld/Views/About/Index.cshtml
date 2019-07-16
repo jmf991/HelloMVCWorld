@@ -1,0 +1,20 @@
+﻿@model HelloMVCWorld.Models.About
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "About";
+}
+
+@section Footer {
+    <span>
+        Hello from the <b>About</b> page!
+    </span>
+}
+
+<h2>About</h2>
+
+<p><b>@Model.Intro</b></p>
+@foreach (var item in Model.CaseStudies)
+{
+
+    <p><b>@item</b></p>
+}
