@@ -17,5 +17,15 @@ namespace HelloMVCWorld.Controllers
             };
             return View(_product);
         }
+
+        public IActionResult List()
+        {
+            return Content("Product list");
+        }
+
+        public IActionResult Details(int id)
+        {
+            return Content("Product details for #" + id);
+        }
     }
 }
