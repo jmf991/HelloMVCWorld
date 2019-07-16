@@ -1,0 +1,11 @@
+﻿@model HelloMVCWorld.Models.WebUser
+@using (var form = Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Birthday)
+        @Html.TextBoxFor(m => m.Birthday)
+        @Html.ValidationMessageFor(m => m.Birthday)
+    </div>
+
+    <input type="submit" value="Submit" />
+}

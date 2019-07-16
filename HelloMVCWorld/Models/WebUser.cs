@@ -8,8 +8,8 @@ namespace HelloMVCWorld.Models
 {
     public class WebUser
     {
-        [Required]
-        [StringLength(25)]
+        [Required(ErrorMessage = "You must enter a value for the First Name field!")]//example of custom error message
+        [StringLength(25, ErrorMessage = "The First Name must be no longer than 25 characters!")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
@@ -21,5 +21,8 @@ namespace HelloMVCWorld.Models
         [Required]
         [EmailAddress]
         public string MailAddress { get; set; }
+
+        [Controllers.WebUserBirthdayValidationAttribute]
+        public DateTime Birthday { get; set; }
     }
 }

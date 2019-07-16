@@ -34,5 +34,19 @@ namespace HelloMVCWorld.Controllers
             else
                 return View(webUser);
         }
+        [HttpGet]
+        public IActionResult CustomValidation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CustomValidation(Models.WebUser webUser)
+        {
+            if (ModelState.IsValid)
+                return Content("Thank you!");
+            else
+                return View(webUser);
+        }
     }
 }
