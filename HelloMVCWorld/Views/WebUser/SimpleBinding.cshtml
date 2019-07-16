@@ -1,0 +1,26 @@
+﻿@model HelloMVCWorld.Models.WebUser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Web user";
+}
+
+@section Footer {
+    <span>
+        Hello from the <b>WebUser</b> page!
+    </span>
+}
+
+@using(var form = Html.BeginForm())
+{
+<div>
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+</div>
+
+<div>
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+</div>
+
+<input type="submit" value="Submit" />
+}
