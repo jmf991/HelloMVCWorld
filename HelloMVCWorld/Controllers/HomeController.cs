@@ -20,5 +20,25 @@ namespace HelloMVCWorld.Controllers
             };
             return View(movie);  
         }
+        public IActionResult QueryTest()
+        {
+            string name = "John Doe";
+            if (!String.IsNullOrEmpty(HttpContext.Request.Query["name"]))
+                name = HttpContext.Request.Query["name"];
+
+            return Content("Name from query string: " + name);
+        }
+
+        [HttpGet]
+        public IActionResult FormsTest()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FormsTestPost()
+        {
+            return Content("Hello, " + HttpContext.Request.Form["UserName"] + ". You are " + HttpContext.Request.Form["UserAge"] + " years old!");
+        }
     }
 }

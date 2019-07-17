@@ -41,7 +41,7 @@ namespace HelloMVCWorld.Controllers
         }
 
         [HttpPost]
-        public IActionResult CustomValidation(Models.WebUser webUser)
+        public IActionResult CustomValidation(Models.WebUserValidatable webUser)
         {
             if (ModelState.IsValid)
                 return Content("Thank you!");
