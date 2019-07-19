@@ -12,7 +12,7 @@ namespace HelloMVCWorld.Controllers
         [ResponseCache(Duration = 120)]
         public IActionResult Index()
         {
-            return View();
+            return Content("Cache set");
         }
     }
 }
